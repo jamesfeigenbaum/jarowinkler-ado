@@ -15,7 +15,7 @@
 {cmd:jarowinkler}
 {varname:1}
 {varname:2}
-[{cmd:,} {opth gen:erate(newvar)} {opth jaro:only(newvar)} ]
+[{cmd:,} {opth gen:erate(newvar)} {opth jaro:only(newvar)} {opth p:winkler(x)} ]
 
 
 {title:Description}
@@ -38,19 +38,21 @@ Jaro-Winkler implementation based on code from http://cs.anu.edu.au/~Peter.Chris
 
 {phang}
 {opth generate(newvar)} Create a new variable named {it:newvar} containing the Jaro-Winkler distance. If the {opt generate()} option is not used, a new variable will be created with default name {bf:jarowinkler}. {p_end}
+
 {phang}
 {opth jaroonly(newvar)} Create a new variable named {it:newvar} containing the Jaro distance. If the {opt jaroonly()} option is not used, nothing will be created. {p_end}
 
 {phang}
-{opth pwinkler(newvar)}  is a constant scaling factor for how much the score is adjusted upwards for having common prefixes. p should not exceed 0.25, otherwise the distance can become larger than 1. The standard value for this constant in Winklers work is p = 0.1 (the default) {p_end}
+{opth pwinkler(x)} A constant scaling factor for how much the score is adjusted upwards for having common prefixes. p should not exceed 0.25, otherwise the distance can become larger than 1. The default value is Winkler's standard value of 0.1.
 
 {title:Examples}
 
-{phang}{cmd:. sysuse census} 
+{phang}{cmd:. sysuse census, clear} {p_end}
+{phang}{cmd:. jarowinkler state state2 , gen(dist_jw)} {p_end}
 
-{phang}{cmd:. jarowinkler state state2 , gen(stateabbrevdist)} {p_end}
-{phang}{cmd:. jarowinkler state state2 , gen(stateabbrevdist) jaroonly(jarodist)} {p_end}
-
+{phang}{cmd:. sysuse census, clear} {p_end}
+{phang}{cmd:. jarowinkler state state2 , gen(dist_jw) jaroonly(dist_jaro)} {p_end}
+{phang}{cmd:. jarowinkler state state2 , gen(dist_jw2) pwinkler(0.2)} {p_end}
 
 {title:Saved results}
 
@@ -66,7 +68,7 @@ Jaro-Winkler implementation based on code from http://cs.anu.edu.au/~Peter.Chris
 
 {title:Acknowledgements}
 
-Thanks to Adrian Sayers for suggesting the inclusion of Jaro distances and allowing the Jaro-Winkler scaling factor to vary and to Martin Goossen for alerting me to an error in the Stata 12 version of the code.
+{pstd} Thanks to Adrian Sayers for suggesting the inclusion of Jaro distances and allowing the Jaro-Winkler scaling factor to vary and to Martin Goossen for alerting me to an error in the Stata 12 version of the code.
 
 {title:Author}
 
