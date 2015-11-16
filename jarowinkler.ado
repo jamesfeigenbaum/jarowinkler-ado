@@ -1,5 +1,5 @@
 
-*! version 1.2  15nov2014 James J Feigenbaum
+*! version 1.3  16nov2015 James J Feigenbaum
 
 /*******************************************************************************
 James J Feigenbaum
