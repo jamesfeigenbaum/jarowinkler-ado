@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.2  13Nov2014 James J Feigenbaum}{...}
+{* *! version 1.3  16Nov2015 James J Feigenbaum}{...}
 {cmd:help jarowinkler}
 {hline}
 
@@ -68,7 +68,7 @@ Jaro-Winkler implementation based on code from http://cs.anu.edu.au/~Peter.Chris
 
 {title:Acknowledgements}
 
-{pstd} Thanks to Adrian Sayers for suggesting the inclusion of Jaro distances and allowing the Jaro-Winkler scaling factor to vary and to Martin Goossen for alerting me to an error in the Stata 12 version of the code.
+{pstd} Thanks to Adrian Sayers for suggesting the inclusion of Jaro distances and allowing the Jaro-Winkler scaling factor to vary, to Martin Goossen for alerting me to an error in the Stata 12 version of the code, and to Alex Fouirnaies and Bruno Caprettini for alerting me to an issue in the calculation of distance for strings with no common characters. 
 
 {title:Author}
 
