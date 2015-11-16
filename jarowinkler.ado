@@ -110,6 +110,7 @@ program define jarowinkler, rclass
 		replace `transposition' = `transposition' / 2
 
 		gen `jaro' = 1/3 * (`common1' / `len1' + `common1' / `len2' + (`common1' - `transposition') / `common1')
+		replace `jaro' = 0 if `jaro' == .
 		format `jaro' %10.3f
 		
 		if "`jaroonly'"!="" {
