@@ -1,5 +1,5 @@
 
-*! version 1.3  16nov2015 James J Feigenbaum
+*! version 1.4  5oct2016 James J Feigenbaum
 
 /*******************************************************************************
 James J Feigenbaum
@@ -22,7 +22,7 @@ program define jarowinkler, rclass
     confirm new variable `generate'
 	
 	if "`jaroonly'"!="" {
-	 confirm new variable `jaroonly'
+		confirm new variable `jaroonly'
 						}
     tokenize "`varlist'"
 	
@@ -32,7 +32,6 @@ program define jarowinkler, rclass
 
 		gen `s1' = lower(`1')
 		gen `s2' = lower(`2')
-
 				
 		tempvar len1 len2 halflen common1 common2 workstr1 workstr2 ass1 ass2 length_ass1 transposition l first1 first2
 		tempvar char start end temp index
@@ -111,6 +110,7 @@ program define jarowinkler, rclass
 
 		gen `jaro' = 1/3 * (`common1' / `len1' + `common1' / `len2' + (`common1' - `transposition') / `common1')
 		replace `jaro' = 0 if `jaro' == .
+		replace `jaro' = 1 if `s1' == `s2'
 		format `jaro' %10.3f
 		
 		if "`jaroonly'"!="" {
