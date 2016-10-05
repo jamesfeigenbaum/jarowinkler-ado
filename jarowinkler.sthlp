@@ -68,7 +68,7 @@ Jaro-Winkler implementation based on code from http://cs.anu.edu.au/~Peter.Chris
 
 {title:Acknowledgements}
 
-{pstd} Thanks to Adrian Sayers for suggesting the inclusion of Jaro distances and allowing the Jaro-Winkler scaling factor to vary, to Martin Goossen for alerting me to an error in the Stata 12 version of the code, and to Alex Fouirnaies and Bruno Caprettini for alerting me to an issue in the calculation of distance for strings with no common characters. 
+{pstd} My thanks to a number of people for suggestions and bug-catching. Thanks to Adrian Sayers for suggesting the inclusion of Jaro distances and allowing the Jaro-Winkler scaling factor to vary. Thanks to Martin Goossen for alerting me to an error in the Stata 12 version of the code. Thanks to Alex Fouirnaies and Bruno Caprettini for alerting me to an issue in the calculation of distance for strings with no common characters. Thanks to Jacob Bor for alerting me to an issue when comparing single character strings. 
 
 {title:Author}
 
